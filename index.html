@@ -1,43 +1,94 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">    
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-        <title>Mehmet Emre Doğan</title>
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head> 
-            
-    <body>
-        <div class="content">
-        <header><h1>Mehmet Emre Doğan</h1></header>
-        
-        <nav>
-            <ul>
-                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                <li><a href="projects.html"><i class="fa fa-gears"></i> Projects</a></li>
-                <li><a href="software.html"><i class="fa fa-code"></i> Software</a></li>
-                <li><a href="contact.html"><i class="fa fa-phone"></i> Contact</a></li>
-                
-                <li class="right"><a href="calculators.html"><i class="fa fa-calculator"></i> Calculators</a></li>
-                <li class="right"><a href="blog.html"><i class="fa fa-book"></i> Blog</a></li>
-            </ul>
-        </nav>
-        <br> <br>
+<html lang="en" class="p-3 mb-2 bg-dark text-white">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
-        <div class="container">
-            <div class="box">
-                <h2>About Me</h2>
-                <p>Cgpa calculator</p>
-            </div>
+
+</head>
+<body class="p-3 mb-2 bg-dark text-white">
+    
+    <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+     
+    
+      <div class="container">
+        <div class="row" >
+            <div class="col"><input type="text" class="form-control bg-dark text-white" placeholder="Course Name"/></div>
+            <div class="col"><input type="number" class="form-control bg-dark text-white" placeholder="Credit"></div>
+            <div class="col">
+            <select class="form-select form-select bg-dark text-white">
+                <option selected>Grade</option>
+                <option value="4.0">AA</option>
+                <option value="3.5">BA</option>
+                <option value="3.0">BB</option>
+                <option value="2.5">CB</option>
+                <option value="2.0">CC</option>
+                <option value="1.5">DC</option>
+                <option value="1.0">DD</option>
+                <option value="0.5">FD</option>
+                <option value="0.0">FF</option>
+                <option value="0.0">NA</option>
+                <option value="-1">U</option>
+                <option value="-1">P</option>
+                <option value="-1">W</option>
+                <option value="-1">I</option>
+                <option value="-1">EX</option>
+                <option value="-1">S</option>
+            </select>
+            </div>
+            <div class="col"><button type="button" class="btn btn-danger">x</button></div>
+        </div>
+        <br>
     </div>
 
-        <div class="fixedFooter">
-            <p>© 2022</p>
+    <div class="container">
+        <div class="row" >
+            <div class="col"><input type="text" class="form-control bg-dark text-white" placeholder="Course Name"/></div>
+            <div class="col"><input type="number" class="form-control bg-dark text-white" placeholder="Credit"></div>
+            <div class="col">
+            <select class="form-select form-select-sm bg-dark text-white">
+                <option selected>Grade</option>
+                <option value="4.0">AA</option>
+                <option value="3.5">BA</option>
+                <option value="3.0">BB</option>
+                <option value="2.5">CB</option>
+                <option value="2.0">CC</option>
+                <option value="1.5">DC</option>
+                <option value="1.0">DD</option>
+                <option value="0.5">FD</option>
+                <option value="0.0">FF</option>
+                <option value="0.0">NA</option>
+                <option value="-1">U</option>
+                <option value="-1">P</option>
+                <option value="-1">W</option>
+                <option value="-1">I</option>
+                <option value="-1">EX</option>
+                <option value="-1">S</option>
+            </select>
+            </div>
         </div>
-
-    </body>
-
-
+        <br>
+    </div>
+</body>
 </html>
