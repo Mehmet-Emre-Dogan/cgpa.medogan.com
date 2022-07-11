@@ -8,7 +8,7 @@ function addKnownRow(data, id){
     var dropdown =  target.getElementsByTagName("select")[0];
 
     courseNameBox.value = data["courseName"];
-    creditBox.value = data["grade"].toString();
+    creditBox.value = data["credit"].toString();
     dropdown.selectedIndex = validLetters.indexOf(data["letter"]) + 1;
 }
 
