@@ -38,9 +38,17 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="https://medogan.com" data-bs-toggle="modal" data-bs-target="#areYouSureToExit"><i class="fa fa-globe"></i> My website</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-upload"></i> Load json</a>
+
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa fa-upload"></i> Load json 
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #0ace7c; width: max-content;">
+              <li><a class="dropdown-item" href="#">  <input class="form-control form-control-sm bg-dark text-white"  type="file" id="formFile" ></a></li>
+               <!-- onchange="loadData()" -->
+            </ul>
           </li>
+  
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fa fa-download"></i> Dump json</a>
           </li>
@@ -56,6 +64,7 @@
   <br>
 
   <!-- style="width: 60%; margin: auto;" -->
+  <div id = "displayWrapper">
   <div id = "myDisplay" >
         
     
@@ -101,6 +110,7 @@
     </script>
     
   </div>
+</div>
 
   <br><br>
 
@@ -187,7 +197,9 @@
       </div>
     </div>
 
+    <pre id="output"></pre>
 
+    <script type="text/javascript" src="js/importExport.js"></script>
     <script type="text/javascript" src="js/calculate.js"></script>
 </body>
 </html>
