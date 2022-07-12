@@ -12,29 +12,6 @@ function addKnownRow(data, id){
     dropdown.selectedIndex = validLetters.indexOf(data["letter"]) + 1;
 }
 
-
-// async function loadData(){
-//     fileDialog = document.getElementById("formFile");
-//     var path = fileDialog.files[0];
-//     console.log(path);
-//     var data = {};
-//     data = await readFile(path);
-
-//     console.log(data);
-// }
-
-// async function readFile(fptr){
-//     let response = await fetch(fptr);
-//     if (response.ok) { // if HTTP-status is 200-299
-//         // get the response body (the method explained below)
-//         let json = await response.json();
-//         return json;
-//       } else {
-//         alert("HTTP-Error: " + response.status);
-//       }
-// }
-
-
 document.getElementById('formFile')
 .addEventListener('change', function() {
   
@@ -64,8 +41,6 @@ fr.onload=function(){
         document.getElementById("displayWrapper").appendChild(displayDiv);
         document.getElementById("myDisplay").appendChild(zerothContainerDiv);
          
-
-
         for(var i=0; i<count; i++){
             addRow('myDisplay');
         }
@@ -82,3 +57,95 @@ fr.onload=function(){
   
 fr.readAsText(this.files[0]);
 })
+
+function download_txt() {
+    var containers = document.getElementsByClassName("container");
+
+    // len = containers.length; 
+
+    var courseCount = 0;
+    var weights = 0;
+    var credits = 0;
+
+    var myDict = {};
+    var dataArray = [];
+
+    var currentdate = new Date(); 
+    var datetime = currentdate.getFullYear() + "-"
+                + (currentdate.getMonth()+1)  + "-" 
+                + currentdate.getDate() + "_"  
+                + currentdate.getHours() + "-"  
+                + currentdate.getMinutes() + "-" 
+                + currentdate.getSeconds();
+
+    // $.extend(ListData, {"hello": { "label":"Hello", "url":"#hello" }});
+    for (item of containers) {
+        // var inputs = containers[i].getElementsByTagName("input");
+        try{
+        var inputs = item.getElementsByTagName("input");
+        var credit = inputs.namedItem("credit").valueAsNumber;
+
+        // var dropdown =  containers[i].getElementsByTagName("select")[0];
+        var dropdown =  item.getElementsByTagName("select")[0];
+        var letter = dropdown.options[dropdown.selectedIndex].text
+
+        if(letter == "Grade"){
+            letter = "--"
+        }
+
+        if(isNaN(credit)){
+            credit = 0;
+        }
+        
+        var grade = letterToGrade(letter);
+        var weight = grade*credit;
+        credits += credit;
+        weights += weight;
+        courseCount++;
+
+        var currDict = {"courseName": inputs[0].value, "credit": credit, "letter":letter, "grade":grade, "weight":weight};
+        dataArray.push(currDict);
+
+        console.log(credit + "-" + letter + "-" + weight);
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
+
+    myDict = {"data": dataArray, "date":datetime};
+    
+    var textToSave = JSON.stringify(myDict);
+    var hiddenElement = document.createElement('a');
+
+    hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
+    hiddenElement.target = '_blank';
+    hiddenElement.download = "Online_Guess__" +  datetime + '.json';
+    hiddenElement.click();
+  }
+  
+  document.getElementById('downloadJson').addEventListener('click', download_txt);
+
+
+
+
+// async function loadData(){
+//     fileDialog = document.getElementById("formFile");
+//     var path = fileDialog.files[0];
+//     console.log(path);
+//     var data = {};
+//     data = await readFile(path);
+
+//     console.log(data);
+// }
+
+// async function readFile(fptr){
+//     let response = await fetch(fptr);
+//     if (response.ok) { // if HTTP-status is 200-299
+//         // get the response body (the method explained below)
+//         let json = await response.json();
+//         return json;
+//       } else {
+//         alert("HTTP-Error: " + response.status);
+//       }
+// }
