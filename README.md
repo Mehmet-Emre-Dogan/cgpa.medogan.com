@@ -6,6 +6,8 @@
 # cgpa.medogan.com
 JS CGPA calculator.
 
+[Demo on YouTube](https://www.youtube.com/watch?v=OMSZXOc6S5o)
+
 [Desktop Version](https://github.com/Mehmet-Emre-Dogan/cgpaGuesser-Gui)
 
-[Demo on YouTube](https://www.youtube.com/watch?v=OMSZXOc6S5o)
+[Mobile Version by My Friend](https://github.com/hakan-demirli/cGPA-Calculator)
