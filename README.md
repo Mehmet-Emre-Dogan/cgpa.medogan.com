@@ -1,6 +1,7 @@
 <div align="center">
-<img src="https://github.com/Mehmet-Emre-Dogan/cgpa.medogan.com/blob/main/favicon.png"> </img>
+<img src="./favicon.png" width=100> </img>
 </p> <br> </p>
+</div>
 
 # cgpa.medogan.com
 JS CGPA calculator.
